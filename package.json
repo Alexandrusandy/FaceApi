@@ -21,5 +21,13 @@
     "nodemon": "^2.0.4"
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexandrusandy/FaceApi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Alexandrusandy/FaceApi/issues"
+  },
+  "homepage": "https://github.com/Alexandrusandy/FaceApi#readme",
   "description": ""
 }
