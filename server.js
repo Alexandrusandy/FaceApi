@@ -9,12 +9,13 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
-const db = knex({
-  // connect to your own database here
-  client: 'pg',
-  connection: {
-  	host:process.env.DATABASE_URL,
-    ssl: true,
+const { Pool } = require('pg');
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
 
 const app = express();
 
