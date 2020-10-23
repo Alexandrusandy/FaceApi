@@ -24,9 +24,9 @@ app.use(bodyParser.json());
 
 app.get('/', (req, res)=> { res.send('it is working') })
 app.post('/signin', signin.handleSignin(pool, bcrypt))
-app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) })
-app.get('/profile/:id', (req, res) => { profile.handleProfileGet(req, res, db)})
-app.put('/image', (req, res) => { image.handleImage(req, res, db)})
+app.post('/register', (req, res) => { register.handleRegister(req, res, pool, bcrypt) })
+app.get('/profile/:id', (req, res) => { profile.handleProfileGet(req, res, pool)})
+app.put('/image', (req, res) => { image.handleImage(req, res, pool)})
 app.post('/imageurl', (req, res) => { image.handleApiCall(req, res)})
 
 app.listen(process.env.PORT || 3001, ()=> {
