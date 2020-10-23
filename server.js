@@ -10,7 +10,7 @@ const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
 const { Pool } = require('pg');
-const pool = new Pool({
+const db = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false
