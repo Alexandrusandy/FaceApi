@@ -1,12 +1,12 @@
 
 
-const handleRegister=(req,res,pool,bcrypt) => {
+const handleRegister=(req,res,db,bcrypt) => {
 	const { email, name, password} = req.body;
 	if( !email || !name || !password){
 		return res.status(400).json('Incorrect form submission');
 	}
 	const hash = bcrypt.hashSync(password) ;
-	pool.transaction(trx => {
+	db.transaction(trx => {
 		trx.insert({
 			hash:hash,
 			email:email
