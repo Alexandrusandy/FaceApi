@@ -13,9 +13,9 @@ app.models
      .catch(err => res.satus(400).json('unabe to work with API'))
 }
 
-const handleImage=(req,res,pool) => {
+const handleImage=(req,res,db) => {
 	const {id} = req.body;
-   pool('users').where('id', '=', id)
+   db('users').where('id', '=', id)
    .increment('entries', 1)
    .returning('entries')
    .then(entries => {
