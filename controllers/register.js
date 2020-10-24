@@ -6,7 +6,7 @@ const handleRegister=(req,res,pool,bcrypt) => {
 		return res.status(400).json('Incorrect form submission');
 	}
 	const hash = bcrypt.hashSync(password) ;
-	pool.transaction(trx => {
+	knex.transaction(trx => {
 		trx.insert({
 			hash:hash,
 			email:email
