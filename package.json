@@ -1,11 +1,11 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "script.js",
   "scripts": {
-    
-    "start:dev": "nodemon server.js"
+    "start": "nodemon server.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
